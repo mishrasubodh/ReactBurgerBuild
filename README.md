@@ -1,3 +1,15 @@
+
+## for hoc
+ you need to create a folder name is hoc into the src folder
+ also you need to create a file in the hoc folder name is AUX.js
+ and past code wich is below in AUx.js file
+ 
+ const aux = (props)=> props.children;
+
+export default aux;
+## for hoc
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
