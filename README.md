@@ -1,8 +1,8 @@
-
+﻿
 ## for hoc
  you need to create a folder name is hoc into the src folder
- also you need to create a file in the hoc folder name is AUX.js
- and past code wich is below in AUx.js file
+ also you need to create a file in the hoc folder name is Aux.js
+ and past code wich is below in AUX.js file
  
  const aux = (props)=> props.children;
 
