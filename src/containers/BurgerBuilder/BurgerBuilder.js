@@ -100,6 +100,7 @@ alert('you continue');
           ingredients={this.state.ingredients}
       purchaseCancelled={this.purchaseCancelHandler}
       purchaseContinue={this.purchaseContunueHandler}
+       ingredientsPrice={this.state.totalPrice}
           />
         </Modal>
 

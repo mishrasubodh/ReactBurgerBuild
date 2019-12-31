@@ -3,4 +3,12 @@
      padding: 0;
      list-style: none;
      display: inline-flex;
+     flex-flow:column
+}
+
+@media (min-width: 500px){
+.NavigationItems {
+  flex-flow:row;
+  
+}
 }
