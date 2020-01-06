@@ -1,29 +1,45 @@
 import React, { Component } from "react";
 // import axios from "axios";
-import axios from '../../axios'
+import axios from "../../../axios"
 import "./FullPost.css";
 
 class FullPost extends Component {
   state = {
     loadedPost: null
   };
-  componentDidUpdate() {
-    if (this.props.id) {
+  componentDidMount() {
+console.log(this.props)
+ this.loadData()
+  }
+
+
+  componentDidUpdate(){
+this.loadData()
+  }
+
+ loadData = () =>{
+   if (this.props.match.params.id) {
       if (
         !this.state.loadedPost ||
-        (this.state.loadedPost && this.state.loadedPost.id !== this.props.id)
+        (this.state.loadedPost && this.state.loadedPost.id != +this.props.match.params.id)
       ) {
         axios
-          .get(`/posts/${this.props.id}`)
+          .get(`/posts/${this.props.match.params.id}`)
           .then(responce => {
             this.setState({ loadedPost: responce.data });
           });
       }
     }
-  }
+
+ }
+
+
+ 
+
+
 
 deletePostHandler =() => {
- axios.delete(`/posts/${this.props.id}`)
+ axios.delete(`/posts/${this.props.match.params.id}`)
  .then(responce=>{
      console.log('responce of data  delete',responce)
  })
@@ -31,7 +47,7 @@ deletePostHandler =() => {
 
   render() {
     let post = <p style={{ textAlign: "center" }}>Please select a Post!</p>;
-    if (this.props.id) {
+    if (this.props.match.params.id) {
       post = <p style={{ textAlign: "center" }}>data is loading...!</p>;
     }
     if (this.state.loadedPost) {
